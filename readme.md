@@ -18,10 +18,22 @@
     - `npm install -g pnpm`
 
 ## NPM
-
 ### Global vs local
 
 `npm install [-g] package_name` : install the package locally, **make sure to be inside the proper folder** or globally with the `-g` option
 
 - **Local** install are accessible only inside the project they were installed for
 - **Global** install are accessible on any project
+
+### Package.json file
+The `package.json` file keeps track of **the packages installed** in your projects. It also stores informations about your project like : name, description, author and github repo. If someone clones your project, `package.json` allows them to install all the packages used on your projects.
+
+`npm init [-y]` create `package.json` and ask you to fill questions about your project. `y` sets the field to default values 
+
+`npm install` if a `package.json` is present it will install all the packages listed in the file.
+
+### Dependencies
+**Dependencies** are bits of code that that your code needs to run. When you instasll a package, your code becomes **dependant** on the function from the packages you installed. If you were to remove them somehting would break.
+
+However, packages you install are dependent of other packages themselves. Thus, installing a package installs its dependencies
+
