@@ -28,12 +28,23 @@
 ### Package.json file
 The `package.json` file keeps track of **the packages installed** in your projects. It also stores informations about your project like : name, description, author and github repo. If someone clones your project, `package.json` allows them to install all the packages used on your projects.
 
-`npm init [-y]` create `package.json` and ask you to fill questions about your project. `y` sets the field to default values 
+- `npm init [-y]` create `package.json` and ask you to fill questions about your project. `y` sets the field to default values 
 
-`npm install` if a `package.json` is present it will install all the packages listed in the file.
+- `npm install` if a `package.json` is present it will install all the packages listed in the file.
 
 ### Dependencies
 **Dependencies** are bits of code that that your code needs to run. When you instasll a package, your code becomes **dependant** on the function from the packages you installed. If you were to remove them somehting would break.
 
 However, packages you install are dependent of other packages themselves. Thus, installing a package installs its dependencies
+
+### How to manage  packages
+
+- `npm view package_name versions` : lists all version of the package
+- `npm install package_name@latest` : install latest update
+- `npm install package_name@X` : install the latest X major version of the package
+- `npm uninstall [-g] package_name` : uninstall a local package and its dependencies. `[-g]` uninstalls a global dependencie 
+
+
+`^3.*.*` : `^` means it will only the install latest minor or patch version available and not the major one. For example : it could update to any `3.*.*` version but no `4.*.*`
+`~3.*.*` : `~` works the same as `^` but only for patches. For example it would only update to `3.2.*` and not `3.3.*`
 
