@@ -17,4 +17,11 @@
     - `sudo apt install npm`
     - `npm install -g pnpm`
 
-##
+## NPM
+
+### Global vs local
+
+`npm install [-g] package_name` : install the package locally, **make sure to be inside the proper folder** or globally with the `-g` option
+
+- **Local** install are accessible only inside the project they were installed for
+- **Global** install are accessible on any project
